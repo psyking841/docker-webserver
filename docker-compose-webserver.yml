@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mongo:
+    image: span/mongo:3.6
+    volumes:
+      - /Volumes/Public/mongodb_data/:/data/db/
+    ports:
+      - "27017:27017"
+
+  webserver:
+    image: span/webserver
+    depends_on:
+      - mongo
+    ports:
+      - "7080:7080"
+    environment:
+      - MONGO_USER=span
+      - MONGO_PASS=abc123
+      - MONGO_HOST=mongo
