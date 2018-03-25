@@ -15,3 +15,7 @@ Docker compose command:
 `
 docker-compose -f docker-compose-webserver.yml up -d
 `
+
+Do memember to change the MONGO_HOST to the host name of mongo db!
+
+
